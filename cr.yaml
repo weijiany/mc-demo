@@ -1,0 +1,8 @@
+---
+apiVersion: test.demo/v1
+kind: MyNginx
+metadata:
+  name: demo-1
+  namespace: default
+spec:
+  image: nginx
