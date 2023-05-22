@@ -22,5 +22,8 @@ spec:
               properties:
                 image:
                   type: string
+            status:
+              type: object
+              x-kubernetes-preserve-unknown-fields: true
       subresources:
         status: {}

@@ -5,8 +5,10 @@ app.use(bodyParser.json());
 const port = 3000;
 
 app.post('/sync', (req, res) => {
+    console.log(JSON.stringify(req.body, null, 2));
+    console.log("---------------------------------------------------------");
     let parent = req.body.parent;
-    let desired = {status: {}, children: []};
+    let desired = {status: {data: "this is a data"}, children: []};
     desired.children.push({
         "apiVersion": "v1",
         "kind": "Pod",
@@ -17,7 +19,7 @@ app.post('/sync', (req, res) => {
             },
             "namespace": parent.metadata.namespace,
         },
-        "spec": -{
+        "spec": {
             "containers": [
                 {
                     "name": "nginx",
